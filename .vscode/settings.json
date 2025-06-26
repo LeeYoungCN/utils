@@ -1,0 +1,45 @@
+{
+    "cmake.buildDirectory": "${workspaceFolder}/build",
+    "cmake.sourceDirectory": "${workspaceFolder}",
+    "editor.mouseWheelZoom": true,
+    "workbench.editor.wrapTabs": true,
+    "terminal.integrated.profiles.windows": {
+        "MyBash": {
+        "path": "D:\\Programs\\Git\\bin\\bash.exe"
+        }
+    },
+    "terminal.integrated.defaultProfile.windows": "MyBash",
+    "window.zoomLevel": 1,
+    "editor.fontFamily": "'JetBrains Mono', Consolas, monospace",
+    "editor.fontSize": 18,
+    "editor.wordWrap": "bounded",
+    "editor.wordWrapColumn": 120,
+    "editor.rulers": [100, 120],
+    "editor.renderWhitespace": "all",
+    "clang-format.executable": "clang-format",
+    "files.autoSave": "afterDelay",
+    "C_Cpp.intelliSenseEngine": "disabled",
+    "C_Cpp.intelliSenseEngineFallback": "disabled",
+    "clangd.serverCompletionRanking": true, // 借助网上的信息排序建议
+    "clangd.arguments": [
+        "--compile-commands-dir=${workspaceFolder}/out/build",
+        "--pretty", // 输出的 JSON 文件更美观
+        "--clang-tidy", // 启用 Clang-Tidy 以提供「静态检查」
+        "--clang-tidy-checks=performance-*, bugprone-*, misc-*, google-*, modernize-*, readability-*, portability-*",
+        "--function-arg-placeholders=false",  // 补全函数时，将会给参数提供占位符，键入后按 Tab 可以切换到下一占位符，乃至函数末
+        "--background-index", // 在后台构建项目代码索引并持久化到磁盘，显著提升符号跳转、自动补全的响应速度。
+        "--completion-style=bundled", // 建议风格：打包(重载函数只会给出一个建议);还可以设置为 detailed
+        "--header-insertion=iwyu",  // iwyu（Include What You Use）：根据符号自动添加最精确的头文件, never：从不自动插入，需手动管理头文件
+        "--enable-config",  // 启用从 .clangd 配置文件读取项目设置
+        "--all-scopes-completion",  // 全局补全(补全建议会给出在当前作用域不可见的索引,插入后自动补充作用域标识符),例如在main()中直接写cout,即使没有`#include <iostream>`,也会给出`std::cout`的建议,配合"--header-insertion=iwyu",还可自动插入缺失的头文件
+        "--ranking-model=decision_forest", // 建议的排序方案：hueristics (启发式), decision_forest (决策树)
+        "--pch-storage=disk",
+        "--log=info",
+        "-j=4"
+    ],
+    "clangd.fallbackFlags": [
+        "-Wall",
+        "-Wconversion",
+        "-Wextra"
+    ]
+}

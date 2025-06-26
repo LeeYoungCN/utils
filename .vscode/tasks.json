@@ -1,0 +1,51 @@
+{
+    "version": "2.0.0",
+    "type": "shell",
+    "options": {
+        "cwd": "${workspaceFolder}"
+    },
+    "tasks": [
+        {
+            "label": "Clean",
+            "options": {
+                "cwd": "${workspaceFolder}/script/"
+            },
+            "command": "./cmake_tools.sh",
+            "args": [
+                "--clean"
+            ],
+            "detail": "根据makefile生成可执行文件和库文件",
+            "problemMatcher": [
+                "$gcc"
+            ]
+        },
+        {
+            "label": "CMake Configure",
+            "options": {
+                "cwd": "${workspaceFolder}/script/"
+            },
+            "command": "./cmake_tools.sh",
+            "args": [
+                "--configure"
+            ],
+            "detail": "根据makefile生成可执行文件和库文件",
+            "problemMatcher": [
+                "$gcc"
+            ]
+        },
+        {
+            "label": "CMake Build",
+            "options": {
+                "cwd": "${workspaceFolder}/script/"
+            },
+            "command": "./cmake_tools.sh",
+            "args": [
+                "--build"
+            ],
+            "detail": "根据makefile生成可执行文件和库文件",
+            "problemMatcher": [
+                "$gcc"
+            ]
+        }
+    ]
+}

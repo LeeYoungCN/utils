@@ -1,0 +1,31 @@
+# EditorConfig 帮助开发者在不同的编辑器和IDE之间定义和维护一致的代码风格
+# 顶层配置文件
+root = true
+
+# 针对所有文件的默认设置
+[*]
+charset = utf-8
+end_of_line = lf
+indent_size = 4
+indent_style = space
+insert_final_newline = true
+max_line_length = 120
+trim_trailing_whitespace = true
+
+# Markdown 文件设置
+[*.md]
+max_line_length = off
+trim_trailing_whitespace = false
+
+# JavaScript/TypeScript 文件设置
+[*.{js,jsx,ts,tsx}]
+indent_size = 2
+quote_type = single
+
+# JSON 文件设置
+[*.json]
+indent_size = 2
+
+# Python 文件设置
+[*.py]
+indent_size = 4
