@@ -1,0 +1,30 @@
+# EditorConfig 帮助开发者在不同的编辑器和IDE之间定义和维护一致的代码风格
+# 顶层配置文件
+root = true
+
+# 针对所有文件的默认设置
+[*]
+charset = utf-8
+end_of_line = lf
+indent_size = 4
+indent_style = space
+insert_final_newline = true
+max_line_length = 120
+trim_trailing_whitespace = true
+
+[*.{cpp,h,hpp,c,cc,cpp.in}]
+indent_size = 4
+
+[CMakeLists.txt]
+indent_style = space
+indent_size = 4
+
+[*.py]
+indent_size = 4
+
+[*.json]
+indent_size = 4
+
+[*.md]
+max_line_length = off
+trim_trailing_whitespace = false

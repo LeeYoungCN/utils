@@ -1,0 +1,7 @@
+CompileFlags:
+    CompilationDatabase: out/build
+InlayHints:              # 代码提示设置部分
+  Enabled: true          # 启用代码提示
+  ParameterNames: true   # 显示参数名称提示
+  DeducedTypes: true     # 显示推断类型提示
+  Designators: true      # 显示设计器提示
