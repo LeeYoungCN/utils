@@ -12,20 +12,21 @@ insert_final_newline = true
 max_line_length = 120
 trim_trailing_whitespace = true
 
-# Markdown 文件设置
+[*.{cpp,h,hpp,c,cc,cpp.in}]
+indent_size = 4
+space_around_assign_op = true  # 等号两侧空格
+max_padding_length = 4        # 最大填充空格数
+
+[CMakeLists.txt]
+indent_style = space
+indent_size = 4
+
+[*.py]
+indent_size = 4
+
+[*.json]
+indent_size = 4
+
 [*.md]
 max_line_length = off
 trim_trailing_whitespace = false
-
-# JavaScript/TypeScript 文件设置
-[*.{js,jsx,ts,tsx}]
-indent_size = 2
-quote_type = single
-
-# JSON 文件设置
-[*.json]
-indent_size = 2
-
-# Python 文件设置
-[*.py]
-indent_size = 4
